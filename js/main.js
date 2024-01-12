@@ -49,21 +49,42 @@ function mostrarGastos() {
   const listaGastos = document.getElementById('listaGastos');
   listaGastos.innerHTML = '';
 
-  gastos.forEach((gasto, index) => {
-    const listItem = document.createElement('li');
-    listItem.textContent = `${gasto.concepto}: $${gasto.monto.toFixed(2)} (${gasto.fecha})`;
+  // Comprobación si la propiedad 'fecha' está indefinida
+  if (gastos.some(gasto => gasto.fecha === undefined)) {
+    // Manejar el caso donde al menos un gasto tiene la propiedad 'fecha' indefinida
+    gastos.forEach((gasto, index) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${gasto.concepto}: $${gasto.monto.toFixed(2)}`;
 
-    // Agregar botón para eliminar gasto
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Eliminar';
-    deleteButton.onclick = function() {
-      eliminarGasto(index);
-    };
+      // Agregar botón para eliminar gasto
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Eliminar';
+      deleteButton.onclick = function() {
+        eliminarGasto(index);
+      };
 
-    listItem.appendChild(deleteButton);
-    listaGastos.appendChild(listItem);
-  });
+      listItem.appendChild(deleteButton);
+      listaGastos.appendChild(listItem);
+    });
+  } else {
+    // Todos los gastos tienen la propiedad 'fecha' definida
+    gastos.forEach((gasto, index) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${gasto.concepto}: $${gasto.monto.toFixed(2)} (${gasto.fecha})`;
+
+      // Agregar botón para eliminar gasto
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Eliminar';
+      deleteButton.onclick = function() {
+        eliminarGasto(index);
+      };
+
+      listItem.appendChild(deleteButton);
+      listaGastos.appendChild(listItem);
+    });
+  }
 }
+
 // Función para eliminar un gasto
 function eliminarGasto(index) {
   gastos.splice(index, 1);
@@ -100,8 +121,3 @@ function cargarGastosFijos() {
 window.onload = function() {
   cargarGastosFijos();
 };
-
-
-
-
-alert()
