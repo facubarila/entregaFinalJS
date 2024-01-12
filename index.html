@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/esitlos.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./js/main.js"></script>
+    </head>
+    <body>
+        <h1>Gestor de Gastos</h1>
+
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" placeholder="Ingrese el monto">
+    
+        <button onclick="agregarGasto()">Agregar Gasto</button>
+    
+        <h2>Lista de Gastos</h2>
+        <ul id="listaGastos"></ul>
+    
+        <p>Total acumulado: $<span id="total">0</span></p>
+    
+        <button onclick="borrarGastos()">Borrar Todos los Gastos</button>
+        <button onclick="guardarListaYCrearNueva()">Guardar Lista y Crear Nueva</button>
+        </body>
+</html>

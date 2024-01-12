@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "concepto": "Comida",
+      "monto": 12000
+    },
+    {
+      "id": 2,
+      "concepto": "Transporte",
+      "monto": 5000
+    },
+    {
+      "id": 3,
+      "concepto": "Medicamentos",
+      "monto": 35000
+    }
+  ]
