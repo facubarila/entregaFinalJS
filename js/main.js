@@ -100,3 +100,8 @@ function cargarGastosFijos() {
 window.onload = function() {
   cargarGastosFijos();
 };
+
+
+
+
+alert()
