@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+}
+input{
+    text-align: center;
+}
+.monto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: center;
+}
+.boton{
+    color: rgb(0, 0, 0);
+    background-color: rgba(137, 43, 226, 0.741);
+}
+h2{
+    text-align: center;
+    padding: 1rem;
+}
+.listado{
+    background-color: rgba(137, 43, 226, 0.299);
+    margin-right: 950px;
+}
+button{
+    margin-bottom: 30px;
+}
